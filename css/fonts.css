@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Atlas DL 3.1 AAA';
+    src: url('../fonts/AtlasDL31AAA-Regular.woff2') format('woff2'),
+        url('../fonts/AtlasDL31AAA-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Atlas DL 3.1 AAA';
+    src: url('../fonts/AtlasDL31AAA-Regular.woff2') format('woff2'),
+        url('../fonts/AtlasDL31AAA-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Atlas DL 3.1 AAA';
+    src: url('../fonts/AtlasDL31AAA-Bold.woff2') format('woff2'),
+        url('../fonts/AtlasDL31AAA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Atlas DL 3.1 AAA';
+    src: url('../fonts/AtlasDL31AAA-Bold.woff2') format('woff2'),
+        url('../fonts/AtlasDL31AAA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almoni ML v5 AAA';
+    src: url('../fonts/AlmoniMLv5AAA-Bold.woff2') format('woff2'),
+        url('../fonts/AlmoniMLv5AAA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almoni ML v5 AAA';
+    src: url('../fonts/AlmoniMLv5AAA-Bold.woff2') format('woff2'),
+        url('../fonts/AlmoniMLv5AAA-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
