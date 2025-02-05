@@ -35,10 +35,18 @@ $(window).load(function () {
 
 
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
+
+  //  mobile menu 
+  if (jQuery(window).width() < 1024) {
+      jQuery('.hambarger').click(function(){
+        jQuery(this).toggleClass('open');
+        jQuery('header .inner').toggleClass('open');
+      });
+
+  }
 
   // banner video
-
   if (jQuery(window).width() > 1023) {
   }
   jQuery('.banner ul li').hover(function () {
@@ -93,7 +101,13 @@ jQuery(document).ready(function () {
   
   });
   // magnificPopup end
-
+  jQuery("footer input[type='checkbox']").on("change", function () {
+    if (jQuery(this).is(":checked")) {
+      jQuery("footer .footer_top .right_col label").addClass("checked");
+    } else {
+      jQuery("footer .footer_top .right_col label").removeClass("checked");
+    }
+  });
 
 
 
