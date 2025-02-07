@@ -108,6 +108,26 @@ jQuery(document).ready(function ($) {
       jQuery("footer .footer_top .right_col label").removeClass("checked");
     }
   });
+  // form focus 
+  $("form .in").on("focus blur input", function () {
+    if ($(this).val() !== "") {
+        $(this).prev("h6").addClass("focus");
+    } else if (!$(this).is(":focus")) {
+        $(this).prev("h6").removeClass("focus");
+    }
+  });
+
+//time_to_move video 
+  jQuery('.time_to_move .vid').hover(function () {    
+    var _this = jQuery(this).attr('data-video')
+    jQuery('.time_to_move .vid video').attr('src', '');
+    jQuery(this).children().attr('src', _this);
+
+  });
+  jQuery('.time_to_move').mouseleave(function () {
+    jQuery('.time_to_move .vid video').attr('src', '');
+  });
+
 
 
 

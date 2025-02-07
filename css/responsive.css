@@ -137,7 +137,9 @@ header .mobile_tell{display: none;}
     footer .footer_bottom { padding-top: 0; }
     footer .footer_bottom .right_col { width: 100%; text-align: center; padding: 24px 0; }
     footer .footer_bottom .left_col { width: 100%; text-align: center; }
-
+    footer .thankyou_col { padding: 45px 0 80px; flex-direction: column;justify-content: center;}
+    footer .thankyou_col span{margin-right: 0;margin: 0 auto;text-align: center;margin-top: 34px;}
+    .mfp-image-holder .mfp-content { max-width: calc(100% - 80px); }
 
 
 }
