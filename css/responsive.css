@@ -51,7 +51,7 @@ header .mobile_tell{display: none;}
 
     .hambarger{position: absolute; right: 0; top: 0; z-index: 9991; width: 48px; height: 56px; display: flex ; justify-content: center; align-items: center;}
     .mobile_logo { display: block; margin: 0 auto; }
-    header .inner { position: fixed; right: 0; top: 0; background-color: var(--black); height: 100vh; display: block; width: 100%; z-index: 999; padding:40px 24px;transform: translateX(101%);transition: 0.5s ease all;}
+    header .inner { position: fixed; right: 0; top: 0; background-color: var(--black); height: 100vh; display: block; width: 100%; z-index: 999; padding:40px 24px;transform: translateX(101%);transition: 0.5s ease all;overflow: auto;}
     header .inner.open{transform: translateX(0);}
     header .inner>ul { position: relative; display: block; width: 100%; text-align: center;}
     header .inner>ul:nth-child(2){margin-top: 36px;padding-top: 17px;border-top: 1px solid rgba(55, 55, 55, 1);}
@@ -74,10 +74,71 @@ header .mobile_tell{display: none;}
     header.fixed .mobile_tell{color: var(--black);}
     header.fixed .hambarger:not(.open){filter: brightness(0) saturate(100%) invert(0%) sepia(14%) saturate(0%) hue-rotate(169deg) brightness(94%) contrast(105%);}
 
+    .live_work_play_blog .wrapper { transform: translate3d(0, 0, 0); padding: 0; }
+    .welcome_uptown_video{margin-bottom: 0;}
+    .live_work_play_blog{background-color: rgba(246, 249, 250, 1);padding: 32px 32px 120px;}
+    .live_work_play_blog .colin .text { width: 100%; margin-left:0; }
+    .live_work_play_blog .colin:nth-child(2n) .text{ width:100%; margin-right:0; margin-left: auto;}
+    .live_work_play_blog .colin { flex-direction: column-reverse !important; margin-bottom: 88px;}
+    .live_work_play_blog .colin .img{width: 100% !important;margin-bottom: 24px;}
+    .live_work_play_blog .colin .img img{width: 100% ;}
+    .live_work_play_blog .colin span { left: -24px; font-size: 64px; line-height: 0.9;top: 86px;bottom: auto; }
+    .live_work_play_blog .colin:nth-child(2n) span { left: auto; right: -24px; }
+    footer .footer_top .right_col { width: 100%; }
+    footer .footer_top .left_col { width: 100%; max-width: 400px; margin: 0 auto; margin-top: 50px; }
+    footer .footer_bottom .right_col { width: 500px; }
 
-    
+
+
 }
+.welcome_uptown_video .mob,
+.live_work_play_blog .colin .img .mob,
+.up_blog .mob{display: none;}
 @media only screen and (max-width:767px){
+    .owl-nav button { width: 32px; height: 32px;margin-left: 0px; }
+    .owl-nav button.owl-prev { margin-right: 0; margin-left: 0; }
+    .owl-nav button.disabled { opacity: 0.7;}
+    p{line-height: 32px;}
+
+    header .mobile_tell { font-size: 14px; }
+    .banner ul { width: 320px; }
+    .banner ul li a{line-height: 96px;}
+    .the_north_text { padding: 24px 0 40px; }
+    .the_north_text>span { line-height: 29px; font-size: 20px; letter-spacing: 2px; max-width: 210px; margin: 0 auto; margin-top: 16px; }
+    .the_north_text .wrapper { padding: 56px 24px 105px; }
+    .the_north_text h4 { letter-spacing: 3px; font-size: 16px; margin:22px 0; }
+    .the_north_text .logo_black { margin-bottom: 42px; }
+    .images_slider .col img, .images_slider .col { height: 376px; }
+    .welcome_uptown_text {margin-top: -30px;}
+    .welcome_uptown_text .wrapper{padding: 0px 24px;}
+    .welcome_uptown_text .col { padding: 40px 24px; max-width: 100%;text-align: center; }
+    .welcome_uptown_video { margin-top: -57px; margin-bottom: 0px; height: 568px; }
+    .welcome_uptown_video img{display: none;}
+    .welcome_uptown_video img.mob{display: block;}
+    .live_work_play_blog .colin p{font-size: 14px;}
+    .live_work_play_blog .colin .img img{display: none;}
+    .live_work_play_blog .colin .img .mob{display: block;}
+    .up_blog img{display: none;}
+    .up_blog .mob{display: block;}
+
+    footer { padding: 63px 0 10px; }
+    footer .wrapper { padding: 0px 24px; }
+    footer .footer_top { padding: 31px 0 44px; }
+    footer .footer_top h3 { margin-bottom: 15px; }
+    footer .footer_top .colin .col { width: 100%; margin-bottom: 24px; }
+    footer .footer_top span[data-name="i_agree"] label { margin: 16px 0 50px; font-size: 14px; line-height: 24px; height: 32px; }
+    footer .footer_top .sub { width: 100%; line-height: 46px; }
+    footer .footer_top .left_col { max-width: 100%; margin-top: 88px; }
+    footer .footer_top .tell span { font-size: 22px; max-width: 220px; text-align: center; }
+    footer .footer_top .tell { padding-top: 30px; }
+    footer .footer_top .left_col ul { margin-top: 56px; }
+    footer .footer_top .left_col ul li{width: 100%;text-align: center;}
+    footer .footer_top .left_col ul li:not(:last-child){margin-bottom: 32px;}
+    footer .footer_bottom { padding-top: 0; }
+    footer .footer_bottom .right_col { width: 100%; text-align: center; padding: 24px 0; }
+    footer .footer_bottom .left_col { width: 100%; text-align: center; }
+
+
 
 }
 
