@@ -6,38 +6,28 @@ $(window).load(function () {
   });
 });
 
+jQuery(window).scroll(function(){
+  var sticky = jQuery('header'),
+      scroll = jQuery(window).scrollTop();
 
-// on click scroll to section
-// jQuery('.foundation_futures .inner a, .dropmenu_gallery_link li a').on('click', function (e) {
-//   var hash = jQuery(this).prop("hash").substr(1);
-//   scrollbar.scrollTo(0, jQuery('.'+hash).attr('data-scroll'), 600);
-// });
-
-// jQuery(window).on("load", function () {
-//   jQuery('.portfolio_sec .wrap').each(function(){
-//     var targetOffset = jQuery(this).offset().top;
-//     var wrapperOffset = jQuery('#full_wrapper').offset().top;
-//     var scrollToPosition = targetOffset - wrapperOffset - 50;
-//     jQuery(this).attr('data-scroll',scrollToPosition);
-//   });
-//   var hash = window.location.hash.slice(1);
-//   if (hash) {
-//     var targetElement = jQuery('.' + hash);
-//     if (targetElement.length) {
-//       var targetOffset = targetElement.offset().top;
-//       var wrapperOffset = jQuery('#full_wrapper').offset().top;
-//       var scrollToPosition = targetOffset - wrapperOffset - 50;
-//       scrollbar.scrollTo(0, scrollToPosition, 500);
-//     }
-//   }
-// });
-
-
-
-
+  if (scroll >= 100) sticky.addClass('fixed');
+  else sticky.removeClass('fixed');
+});
 jQuery(document).ready(function ($) {
+  // lenis scroll start
+  if (!("ontouchstart" in document.documentElement)) {
+		document.documentElement.className += " no-touch";
+	} else {
+		document.documentElement.className += " touch";
+	}
+  if($('html').hasClass('no-touch')){
+      const lenis = new Lenis({
+      autoRaf: true,
+      });
+  }
+// lenis scroll end
 
-  //  mobile menu 
+//  mobile menu 
   if (jQuery(window).width() < 1024) {
       jQuery('.hambarger').click(function(){
         jQuery(this).toggleClass('open');
@@ -137,91 +127,5 @@ $(window).resize(function () {
 
 });
 
-var scrollbar = Scrollbar.init(document.querySelector('#full_wrapper'), {
-  speed: 0.7,
-  damping: 0.1
-});
 
-
-function isElementInViewport(el) {
-  var rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// scrollbar.addListener(() => {
-//   $(".count").each(function () {
-//     var $this = $(this);
-//     if (isElementInViewport(this) && !$this.hasClass('counted')) { 
-//       var countTo = parseFloat($this.attr("data-number"));
-
-//       $({ countNum: 0 }).animate(
-//         { countNum: countTo },
-//         {
-//           duration: 850,
-//           easing: "swing",
-//           step: function () {
-//             $this.text(this.countNum.toLocaleString("en", { 
-//               minimumFractionDigits: (countTo % 1 !== 0 ? 1 : 0) 
-//             }));
-//           },
-//           complete: function () {
-//             $this.text(this.countNum.toLocaleString("en", { 
-//               minimumFractionDigits: (countTo % 1 !== 0 ? 1 : 0) 
-//             }));
-//             $this.addClass('counted'); 
-//           }
-//         }
-//       );
-//     }
-//   });
-// });
-
-
-scrollbar.addListener((status) => {
-  var scrollTop = status.offset.y;
-  var header = jQuery('header');
-
-  if (scrollTop >= 100) {
-    header.addClass('fixed');
-  } else {
-    header.removeClass('fixed');
-  }
-});
-
-
-// image Show animate
-(function ($) {
-  $.fn.visible = function (partial) {
-    var $t = $(this),
-      $w = $(window),
-      viewTop = $w.scrollTop(),
-      viewBottom = viewTop + $w.height(),
-      top = $t.offset().top,
-      bottom = top + $t.height(),
-      compareTop = partial === true ? bottom : top,
-      compareBottom = partial === true ? top : bottom;
-
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-  };
-})(jQuery);
-
-// Wait for the Smooth Scrollbar's 'scroll' event, which is different from the regular window scroll
-scrollbar.addListener(function () {
-  var win = $(window);
-  var allMods = $(".animate");
-
-  allMods.each(function (i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      setTimeout(function () {
-        el.addClass("come-in");
-      }, i * 50);
-    }
-  });
-});
 

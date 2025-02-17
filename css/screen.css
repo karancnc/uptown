@@ -181,6 +181,16 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
  .mfp-img-mobile .mfp-image-holder { padding-left: 0; padding-right: 0; } .mfp-img-mobile img.mfp-img { padding: 0; } .mfp-img-mobile .mfp-figure:after { top: 0; bottom: 0; } .mfp-img-mobile .mfp-figure small { display: inline; margin-left: 5px; } .mfp-img-mobile .mfp-bottom-bar { background: rgba(0, 0, 0, 0.6); bottom: 0; margin: 0; top: auto; padding: 3px 5px; position: fixed; box-sizing: border-box; } .mfp-img-mobile .mfp-bottom-bar:empty { padding: 0; } .mfp-img-mobile .mfp-counter { right: 5px; top: 3px; } .mfp-img-mobile .mfp-close { top: 0; right: 0; width: 35px; height: 35px; line-height: 35px; background: rgba(0, 0, 0, 0.6); position: fixed; text-align: center; padding: 0; } }
 @media all and (max-width: 900px) { .mfp-arrow { -webkit-transform: scale(0.75); transform: scale(0.75); } .mfp-arrow-left { -webkit-transform-origin: 0; transform-origin: 0; } .mfp-arrow-right { -webkit-transform-origin: 100%; transform-origin: 100%; } .mfp-container { padding-left: 6px; padding-right: 6px; } }
 /* magnificPopup css End */
+/* lenis scroll */
+html.lenis, html.lenis body { height: auto; }
+/* width */
+::-webkit-scrollbar { width: 5px; }
+  /* Track */
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  /* Handle */
+  ::-webkit-scrollbar-thumb { background: #888; }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover { background: #555; }
 
 /* Page Layout */
 body{font-family: var(--body-font);}
@@ -403,8 +413,41 @@ footer .footer_top .right_col.thankyou .thankyou_col{display: flex;}
 .architect_passion.live_passion .colin .img { width: calc(100% - 400px); }
 .architect_passion.live_passion .colin:nth-child(2n){flex-direction: row-reverse;}
 
-.the_north_text_architect.the_north_text p{max-width: 1000px; margin: 0 auto; }
+.the_north_text_architect.the_north_text p{max-width: 1004px; margin: 0 auto; }
 
 .architect_welcome_uptown_video{height: 712px;position: relative;border: 8px solid rgba(246, 249, 250, 1);max-width: calc(100% - 272px);margin: 0 auto;margin-top: 144px;margin-bottom: 144px;}
 .architect_welcome_uptown_video>img{position: absolute;left: 0;top: 0;bottom: 0;right: 0;margin: auto;}
 .architect_welcome_uptown_video .mob{display: none;}
+
+.entrepreneurs_blog{max-width: calc(100% - 32px);margin: 0 auto;padding: 256px 0 352px;background-color: var(--black);margin-bottom: 16px;}
+.entrepreneurs_blog .colin{align-items: flex-end;margin-bottom: 214px;}
+.entrepreneurs_blog .colin:nth-child(2n){flex-direction: row-reverse;}
+.entrepreneurs_blog .colin:last-child{margin-bottom: 0;}
+.entrepreneurs_blog .colin .img img{width: 100%;}
+.entrepreneurs_blog .colin .text{width: 504px;}
+.entrepreneurs_blog .colin h2{margin-bottom: 24px;padding-bottom: 24px;}
+.entrepreneurs_blog .colin h2::after{background-color: var(--white);}
+.entrepreneurs_blog .colin h3{font-size: 22px;line-height: 32px;font-weight: 700;font-family: var(--atlas);letter-spacing: -0.16px;}
+.entrepreneurs_blog .colin p{font-size: 14px;line-height: 32px;color: var(--white);}
+.entrepreneurs_blog .colin p:not(:last-child){margin-bottom: 24px;}
+/* .entrepreneurs_blog .colin .img{width: calc(100% - 608px);height: 616px;display: flex;justify-content: flex-start;flex-wrap: wrap;}
+.entrepreneurs_blog .colin .img .col{width: 50%;height: 50%;border: 1px solid #fff;}
+.entrepreneurs_blog .colin .img .col.col_landscap{height: 100%;} */
+
+.entrepreneurs_blog .colin .img{width: calc(100% - 608px);height: 616px;position: relative;display: flex;flex-wrap: wrap;}
+.entrepreneurs_blog .colin .img .col{width: 50%;height: 50%;}
+.entrepreneurs_blog .colin .img .col img{width: 100%;height: 100%;}
+
+.entrepreneurs_blog .colin .img.img_landscap{  display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 0px;}
+.entrepreneurs_blog .colin .img.img_landscap .col{width: 100%;height: 100%;}
+.entrepreneurs_blog .colin .img.img_landscap .col:nth-child(1) { grid-row: span 2 / span 2; }
+.entrepreneurs_blog .colin .img.img_landscap .col:nth-child(3) { grid-column-start: 2; }
+
+
+.entrepreneurs_blog .colin .img.img_portrate{   display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 0px;}
+.entrepreneurs_blog .colin .img.img_portrate .col{width: 100%;height: 100%;}
+.entrepreneurs_blog .colin .img.img_portrate .col:nth-child(1){ grid-column: span 2 / span 2; }
+.entrepreneurs_blog .colin .img.img_portrate .col:nth-child(2){ grid-row-start: 2; }
+.entrepreneurs_blog .colin .img.img_portrate .col:nth-child(3){ grid-row-start: 2; }
+
+
