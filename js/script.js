@@ -39,19 +39,19 @@ jQuery(document).ready(function ($) {
   // banner video
   if (jQuery(window).width() > 1023) {
   }
-  jQuery('.banner ul li').hover(function () {
-    jQuery('.banner .video_banner').css('opacity', '1');
-    var _this = jQuery(this).attr('data-video')
-    jQuery('.banner .ban_video').attr('src', _this);
-    jQuery('.banner .comman_video').attr('src', '');
+  // jQuery('.banner ul li').hover(function () {
+  //   jQuery('.banner .video_banner').css('opacity', '1');
+  //   var _this = jQuery(this).attr('data-video')
+  //   jQuery('.banner .ban_video').attr('src', _this);
+  //   jQuery('.banner .comman_video').attr('src', '');
 
-  });
-  jQuery('.banner ul').mouseleave(function () {
-    jQuery('.banner .video_banner').css('opacity', '0');
-    var _this = jQuery(this).attr('data-video')
-    jQuery('.banner .comman_video').attr('src', _this);
-    jQuery('.banner .ban_video').attr('src', '');
-  });
+  // });
+  // jQuery('.banner ul').mouseleave(function () {
+  //   jQuery('.banner .video_banner').css('opacity', '0');
+  //   var _this = jQuery(this).attr('data-video')
+  //   jQuery('.banner .comman_video').attr('src', _this);
+  //   jQuery('.banner .ban_video').attr('src', '');
+  // });
   // banner video
 
   // images_slider start
@@ -108,16 +108,55 @@ jQuery(document).ready(function ($) {
   });
 
 //time_to_move video 
-  jQuery('.time_to_move .vid').hover(function () {    
-    var _this = jQuery(this).attr('data-video')
-    jQuery('.time_to_move .vid video').attr('src', '');
+if(jQuery(window).width() > 767){
+    jQuery('.time_to_move .vid').hover(function () {    
+      var _this = jQuery(this).attr('data-video')
+      jQuery('.time_to_move .vid video').attr('src', '');
+      jQuery(this).children().attr('src', _this);
+
+    });
+    jQuery('.time_to_move').mouseleave(function () {
+      jQuery('.time_to_move .vid video').attr('src', '');
+    });
+}else{
+  jQuery('.time_to_move .vid').each(function(){
+    var _this = jQuery(this).attr('data-video');
     jQuery(this).children().attr('src', _this);
-
-  });
-  jQuery('.time_to_move').mouseleave(function () {
-    jQuery('.time_to_move .vid video').attr('src', '');
   });
 
+}
+
+jQuery('.banner ul li').hover(function () {
+  var _this = jQuery(this).attr('data-video');
+
+  // Hide all media elements first
+  jQuery('.banner .bg video, .banner .bg iframe, .banner .bg img').hide();
+
+  // Check the type of media and show the appropriate one
+  if (_this.includes('youtube.com')) {
+      jQuery('.banner .bg iframe').attr('src', _this + '&autoplay=1&loop=1&playlist=cz4S3mrNBnw&controls=0').show();
+  } else if (_this.includes('.mp4')) {
+      jQuery('.banner .bg video').attr('src', _this).show();
+  } else {
+      jQuery('.banner .bg img').attr('src', _this).show();
+  }
+});
+
+// On mouse leave, reset to default video
+jQuery('.banner ul').mouseleave(function () {
+  var _this = jQuery(this).attr('data-video');
+  
+  jQuery('.banner .bg video, .banner .bg iframe, .banner .bg img').hide();
+
+  // Check the type of media and show the appropriate one
+  if (_this.includes('youtube.com')) {
+      jQuery('.banner .bg iframe').attr('src', _this + '&autoplay=1&loop=1&playlist=cz4S3mrNBnw&controls=0').show();
+  } else if (_this.includes('.mp4')) {
+      jQuery('.banner .bg video').attr('src', _this).show();
+  } else {
+      jQuery('.banner .bg img').attr('src', _this).show();
+  }
+});
 
 
 
